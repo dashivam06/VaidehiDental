@@ -1,0 +1,130 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f5f6fa;
+  color: #333;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  transition: all 0.3s;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  padding: 20px;
+  margin-top: 70px; /* Add margin to account for fixed navbar */
+}
+
+.content-section {
+  margin-bottom: 30px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h1 {
+  color: #1a365d;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Common Status Styles */
+.status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status.confirmed {
+  background-color: #c6f6d5;
+  color: #22543d;
+}
+
+.status.pending {
+  background-color: #feebc8;
+  color: #744210;
+}
+
+.status.cancelled {
+  background-color: #fed7d7;
+  color: #822727;
+}
+
+.status.completed {
+  background-color: #e6fffa;
+  color: #234e52;
+}
+
+.status.active {
+  background-color: #c6f6d5;
+  color: #22543d;
+}
+
+.status.inactive {
+  background-color: #fed7d7;
+  color: #822727;
+}
+
+/* Scrollbar styling for containers with scrollable content */
+
+.scrollbar-hover {
+  scrollbar-width: 6px; /* Firefox */
+}
+
+.scrollbar-hover * {
+  transition: all 1s ease;
+}
+
+.scrollbar-hover::-webkit-scrollbar {
+  width: 6px;
+  display: none;
+}
+
+.scrollbar-hover:hover::-webkit-scrollbar {
+  width: 6px;
+  visibility: visible;
+}
+
+.scrollbar-hover:hover {
+  scrollbar-width: thin;
+}
+
+.scrollbar-hover::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.scrollbar-hover::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.scrollbar-hover::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,92 @@
+<!-- Top Navigation Bar -->
+
+<style>
+  .top-nav {
+    background-color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 250px;
+    z-index: 99;
+    transition: all 0.3s;
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    background-color: #f5f6fa;
+    border-radius: 5px;
+    padding: 8px 15px;
+    width: 300px;
+  }
+
+  .search-container input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    margin-left: 10px;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .notifications {
+    margin-right: 20px;
+    position: relative;
+  }
+
+  .notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: #e53e3e;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .user-profile {
+    display: flex;
+    align-items: center;
+  }
+
+  .user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+</style>
+
+<header class="top-nav">
+  <div class="search-container">
+    <i class="fas fa-search"></i>
+    <input type="text" placeholder="Search..." />
+  </div>
+  <div class="user-info">
+    <div class="notifications">
+      <i class="fas fa-bell"></i>
+      <span class="notification-badge">3</span>
+    </div>
+    <div class="user-profile">
+      <img
+        src="https://xsgames.co/randomusers/assets/avatars/female/25.jpg"
+        alt="Admin"
+      />
+      <span class="username">Admin User</span>
+    </div>
+  </div>
+</header>

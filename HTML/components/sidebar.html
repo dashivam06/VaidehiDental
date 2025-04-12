@@ -1,0 +1,239 @@
+<!-- Sidebar Navigation -->
+<style>
+  /* Sidebar Styles */
+  .sidebar {
+    width: 250px;
+    background-color: #fafafa;
+    color: #00879e;
+    transition: all 0.3s;
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+  }
+
+  .sidebar-header {
+    padding: 20px;
+    background: #fafafa;
+    display: flex;
+  }
+
+  .sidebar-header a {
+    color: #066fc5;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .sidebar-header a span {
+    color: #36a3f7;
+  }
+
+  .sidebar-nav ul {
+    list-style-type: none;
+    padding: 10px;
+  }
+
+  .sidebar-nav ul li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 5px;
+  }
+
+  .sidebar-nav ul li a {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #5b5b5b;
+    transition: all 0.3s;
+  }
+
+  .sidebar-nav ul li a i {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+
+  .sidebar-nav ul li a:hover,
+  .sidebar-nav ul li.active a {
+    background-color: #4299e1;
+    border-radius: 10px;
+    color: #fff;
+  }
+
+  .sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+  }
+
+  .sidebar-footer a {
+    color: red;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .sidebar-footer a:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .sidebar-footer a i {
+    margin-right: 10px;
+  }
+
+  /* Mobile Toggle */
+  .mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  /* Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .sidebar {
+      width: 80px;
+      transform: translateX(-100%);
+    }
+
+    .sidebar.sidebar-open {
+      transform: translateX(0);
+      width: 250px;
+    }
+
+    .sidebar-header h2,
+    .sidebar-nav ul li a span,
+    .sidebar-footer a span {
+      display: none;
+    }
+
+    .sidebar.sidebar-open .sidebar-header h2,
+    .sidebar.sidebar-open .sidebar-nav ul li a span,
+    .sidebar.sidebar-open .sidebar-footer a span {
+      display: inline;
+    }
+
+    .sidebar-nav ul li a {
+      justify-content: center;
+      padding: 15px;
+    }
+
+    .sidebar.sidebar-open .sidebar-nav ul li a {
+      justify-content: flex-start;
+      padding: 15px 20px;
+    }
+
+    .sidebar-nav ul li a i {
+      margin-right: 0;
+    }
+
+    .sidebar.sidebar-open .sidebar-nav ul li a i {
+      margin-right: 10px;
+    }
+
+    .sidebar-footer a {
+      justify-content: center;
+    }
+
+    .sidebar.sidebar-open .sidebar-footer a {
+      justify-content: flex-start;
+    }
+
+    .mobile-toggle {
+      display: block;
+    }
+
+    .main-content {
+      margin-left: 0;
+    }
+
+    .search-container {
+      width: 200px;
+    }
+
+    .top-nav {
+      left: 0;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .search-container {
+      display: none;
+    }
+
+    .action-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .filter-container {
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .filter-container select,
+    .filter-container input {
+      flex: 1;
+      min-width: 120px;
+    }
+  }
+</style>
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <a href="/dashboard.html">Vaidehi <span>Dental</span></a>
+    <button id="sidebar-toggle" class="mobile-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+  <nav class="sidebar-nav">
+    <ul>
+      <li class="nav-dashboard">
+        <a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+      </li>
+      <li class="nav-users">
+        <a href="users.html"><i class="fas fa-users"></i> Users</a>
+      </li>
+      <li class="nav-doctors">
+        <a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a>
+      </li>
+      <li class="nav-appointments">
+        <a href="appointments.html"
+          ><i class="far fa-calendar-alt"></i> Appointments</a
+        >
+      </li>
+      <li class="nav-blogs">
+        <a href="blogs.html"><i class="fas fa-blog"></i> Blogs</a>
+      </li>
+      <li class="nav-faqs">
+        <a href="faqs.html"><i class="fas fa-question-circle"></i> FAQs</a>
+      </li>
+      <li class="nav-testimonials">
+        <a href="testimonials.html"
+          ><i class="fas fa-comment"></i> Testimonials</a
+        >
+      </li>
+      <li class="nav-videos">
+        <a href="videos.html"><i class="fas fa-video"></i> Videos</a>
+      </li>
+      <li class="nav-services">
+        <a href="services.html"
+          ><i class="fas fa-briefcase-medical"></i> Services</a
+        >
+      </li>
+      <li class="nav-settings">
+        <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="sidebar-footer">
+    <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </div>
+</aside>
