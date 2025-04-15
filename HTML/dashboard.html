@@ -301,15 +301,20 @@
       }
 
       /* Data Table */
+      /* FIXED: Table container styles for proper horizontal scrolling */
       .table-container {
-        max-height: 400px;
-        overflow-y: auto;
+        width: 100%;
+        overflow-x: auto;
         margin-bottom: 20px;
+        border-radius: 8px;
+        /* Remove max-height to prevent vertical scrolling issues */
       }
 
       .data-table {
         width: 100%;
+        min-width: 750px; /* Ensures horizontal scrolling when needed */
         border-collapse: collapse;
+        white-space: nowrap;
       }
 
       .data-table thead {
@@ -334,6 +339,25 @@
 
       .data-table tr:hover {
         background-color: #f8f9fa;
+      }
+
+      /* Status indicators */
+      .status {
+        display: inline-block;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .status.confirmed {
+        background-color: #e6fffa;
+        color: #38b2ac;
+      }
+
+      .status.pending {
+        background-color: #fefcbf;
+        color: #d69e2e;
       }
 
       /* Action Buttons */
@@ -419,6 +443,31 @@
         .summary-cards {
           grid-template-columns: 1fr;
         }
+      }
+
+      /* FIXED: Removed conflicting overflow settings */
+      .dashboard-content {
+        width: 100%;
+      }
+
+      /* FIXED: Custom scrollbar styles */
+      .table-container::-webkit-scrollbar {
+        height: 6px;
+        width: 6px;
+      }
+
+      .table-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 3px;
+      }
+
+      .table-container::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 3px;
+      }
+
+      .table-container::-webkit-scrollbar-thumb:hover {
+        background: #a1a1a1;
       }
     </style>
   </head>
@@ -636,7 +685,8 @@
                 <h3>Today's Appointments</h3>
                 <a href="appointments.html" class="view-all">View All</a>
               </div>
-              <div class="table-container scrollbar-hover">
+              <!-- FIXED: Simplified table container structure -->
+              <div class="table-container">
                 <table class="data-table">
                   <thead>
                     <tr>
