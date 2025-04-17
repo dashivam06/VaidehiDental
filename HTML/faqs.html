@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQs - Dental Clinic Admin</title>
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* FAQs Page Specific Styles */
+      .action-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .add-faq-btn {
+        display: flex;
+        align-items: center;
+        background-color: #4299e1;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+
+      .add-faq-btn i {
+        margin-right: 8px;
+      }
+
+      .add-faq-btn:hover {
+        background-color: #3182ce;
+      }
+
+      .filter-container {
+        display: flex;
+        gap: 10px;
+      }
+
+      .filter-container select,
+      .filter-container input {
+        padding: 8px 12px;
+        border: 1px solid #e2e8f0;
+        border-radius: 5px;
+        background-color: white;
+        outline: none;
+        color: #4a5568;
+      }
+
+      /* FAQs Styles */
+      .faq-categories {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+
+      .faq-category {
+        background-color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 1px solid #e2e8f0;
+      }
+
+      .faq-category.active {
+        background-color: #4299e1;
+        color: white;
+        border-color: #4299e1;
+      }
+
+      .faq-category:hover:not(.active) {
+        background-color: #edf2f7;
+      }
+
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .faq-item {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .faq-question {
+        padding: 15px 20px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+        color: #2d3748;
+        transition: all 0.3s;
+      }
+
+      .faq-question:hover {
+        background-color: #f8f9fa;
+      }
+
+      .faq-question.active {
+        background-color: #ebf8ff;
+        color: #4299e1;
+      }
+
+      .faq-question i {
+        transition: transform 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .faq-question.active i {
+        /* transform: rotate(180deg); */
+      }
+
+      .faq-answer {
+        padding: 0 20px;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.3s;
+        line-height: 1.6;
+        color: #4a5568;
+      }
+
+      .faq-answer.active {
+        padding: 20px;
+        height: auto;
+      }
+
+      .faq-item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 15px;
+      }
+
+      .faq-category-tag {
+        font-size: 12px;
+        padding: 3px 8px;
+        border-radius: 4px;
+        background-color: #ebf8ff;
+        color: #4299e1;
+      }
+
+      .faq-actions {
+        display: flex;
+        gap: 5px;
+      }
+
+      .faq-actions a {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        text-decoration: none;
+      }
+
+      .faq-actions a:hover {
+        background-color: #edf2f7;
+      }
+
+      .faq-actions a.edit {
+        color: #48bb78;
+      }
+
+      .faq-actions a.delete {
+        color: #e53e3e;
+      }
+
+      /* Pagination */
+      .pagination {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 5px;
+        margin-top: 20px;
+      }
+
+      .pagination a {
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #e2e8f0;
+        background-color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+        color: #4a5568;
+      }
+
+      .pagination a:hover {
+        background-color: #edf2f7;
+      }
+
+      .pagination a.active {
+        background-color: #4299e1;
+        color: white;
+        border-color: #4299e1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="dashboard-container">
+      <!-- Sidebar Navigation (loaded via JS) -->
+      <div data-component="sidebar"></div>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+        <!-- Top Navigation Bar (loaded via JS) -->
+        <div data-component="navbar"></div>
+
+        <!-- FAQs Content -->
+        <div class="dashboard-content">
+          <section class="content-section">
+            <h1>FAQs Management</h1>
+
+            <!-- Action Bar -->
+            <div class="action-bar">
+              <a href="#" class="add-faq-btn">
+                <i class="fas fa-plus"></i> Add New FAQ
+              </a>
+            </div>
+
+            <!-- FAQ List -->
+            <div class="faq-list">
+              <!-- FAQ Item 1 -->
+              <div class="faq-item">
+                <div class="faq-question active">
+                  <div class="faq-item-header">
+                    <div>What services does your dental clinic offer?</div>
+                  </div>
+                  <div class="faq-actions">
+                    <a href="#" class="edit"><i class="fas fa-edit"></i></a>
+                    <a href="#" class="delete"
+                      ><i class="fas fa-trash-alt"></i
+                    ></a>
+                    <i class="fas fa-chevron-down"></i>
+                  </div>
+                </div>
+                <div class="faq-answer active">
+                  <p>
+                    Our clinic offers a comprehensive range of dental services
+                    including:
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <!-- Include components loader script -->
+    <script src="../js/components.js"></script>
+    <script>
+      // Script to toggle FAQs
+      document.addEventListener("DOMContentLoaded", function () {
+        const faqQuestions = document.querySelectorAll(".faq-question");
+        faqQuestions.forEach((question) => {
+          question.addEventListener("click", function (e) {
+            // Prevent triggering when clicking action buttons
+            if (e.target.closest(".faq-actions a")) {
+              return;
+            }
+
+            const answer = this.nextElementSibling;
+            this.classList.toggle("active");
+            answer.classList.toggle("active");
+          });
+        });
+
+        // Category filter
+        const categories = document.querySelectorAll(".faq-category");
+        categories.forEach((category) => {
+          category.addEventListener("click", function () {
+            // Remove active class from all categories
+            categories.forEach((cat) => cat.classList.remove("active"));
+            // Add active class to clicked category
+            this.classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
