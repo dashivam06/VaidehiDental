@@ -150,7 +150,8 @@
       .form-row {
         display: flex;
         flex-wrap: wrap;
-        margin: 0 -10px 15px;
+        margin: 30px;
+        gap: 30px;
       }
 
       .form-group {
@@ -493,171 +494,53 @@
 
         <div class="booking-container">
           <form id="appointmentForm">
-            <!-- Service Selection -->
             <div class="form-section">
-              <h3 class="section-title">1. Select Service</h3>
-              <div class="service-cards">
-                <div class="service-card" data-service="regular-checkup">
-                  <div class="service-card-header">
-                    <div class="service-card-icon">
-                      <i class="fas fa-teeth"></i>
-                    </div>
-                    <div class="service-card-title">Regular Checkup</div>
-                  </div>
-                  <div class="service-card-description">
-                    Comprehensive dental examination and cleaning
-                  </div>
-                </div>
+              <h3 class="section-title">Appointment Details</h3>
 
-                <div class="service-card" data-service="teeth-whitening">
-                  <div class="service-card-header">
-                    <div class="service-card-icon">
-                      <i class="fas fa-tooth"></i>
-                    </div>
-                    <div class="service-card-title">Teeth Whitening</div>
-                  </div>
-                  <div class="service-card-description">
-                    Professional teeth whitening for a brighter smile
-                  </div>
-                </div>
-
-                <div class="service-card" data-service="root-canal">
-                  <div class="service-card-header">
-                    <div class="service-card-icon">
-                      <i class="fas fa-procedures"></i>
-                    </div>
-                    <div class="service-card-title">Root Canal</div>
-                  </div>
-                  <div class="service-card-description">
-                    Treatment for infected tooth pulp to save your natural tooth
-                  </div>
-                </div>
-
-                <div class="service-card" data-service="dental-implants">
-                  <div class="service-card-header">
-                    <div class="service-card-icon">
-                      <i class="fas fa-x-ray"></i>
-                    </div>
-                    <div class="service-card-title">Dental Implants</div>
-                  </div>
-                  <div class="service-card-description">
-                    Permanent solution for missing teeth with natural look and
-                    feel
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Doctor Selection -->
-            <div class="form-section doctor-selection">
-              <h3 class="section-title">2. Select Doctor</h3>
-              <div class="doctor-cards">
-                <div class="doctor-card" data-doctor="dr-sarah-johnson">
-                  <div class="doctor-card-header">
-                    <div class="doctor-avatar">
-                      <i class="fas fa-user-md"></i>
-                    </div>
-                    <div class="doctor-info">
-                      <h4>Dr. Sarah Johnson</h4>
-                      <p>General Dentist • 8+ years experience</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="doctor-card" data-doctor="dr-michael-chen">
-                  <div class="doctor-card-header">
-                    <div class="doctor-avatar">
-                      <i class="fas fa-user-md"></i>
-                    </div>
-                    <div class="doctor-info">
-                      <h4>Dr. Michael Chen</h4>
-                      <p>Cosmetic Dentist • 10+ years experience</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="doctor-card" data-doctor="dr-emily-patel">
-                  <div class="doctor-card-header">
-                    <div class="doctor-avatar">
-                      <i class="fas fa-user-md"></i>
-                    </div>
-                    <div class="doctor-info">
-                      <h4>Dr. Emily Patel</h4>
-                      <p>Orthodontist • 12+ years experience</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Date and Time Selection -->
-            <div class="form-section date-time-selection">
-              <h3 class="section-title">3. Select Date & Time</h3>
-              <div class="calendar-container">
-                <div class="calendar">
-                  <div id="appointment-calendar"></div>
-                </div>
-                <div class="time-slots">
-                  <h4 class="time-slot-heading">Available Time Slots</h4>
-                  <div class="time-slot-grid">
-                    <div class="time-slot" data-time="9:00">9:00 AM</div>
-                    <div class="time-slot" data-time="9:30">9:30 AM</div>
-                    <div class="time-slot" data-time="10:00">10:00 AM</div>
-                    <div class="time-slot" data-time="10:30">10:30 AM</div>
-                    <div class="time-slot" data-time="11:00">11:00 AM</div>
-                    <div class="time-slot" data-time="11:30">11:30 AM</div>
-                    <div class="time-slot unavailable" data-time="12:00">
-                      12:00 PM
-                    </div>
-                    <div class="time-slot unavailable" data-time="12:30">
-                      12:30 PM
-                    </div>
-                    <div class="time-slot" data-time="1:00">1:00 PM</div>
-                    <div class="time-slot" data-time="1:30">1:30 PM</div>
-                    <div class="time-slot" data-time="2:00">2:00 PM</div>
-                    <div class="time-slot" data-time="2:30">2:30 PM</div>
-                    <div class="time-slot" data-time="3:00">3:00 PM</div>
-                    <div class="time-slot" data-time="3:30">3:30 PM</div>
-                    <div class="time-slot" data-time="4:00">4:00 PM</div>
-                    <div class="time-slot unavailable" data-time="4:30">
-                      4:30 PM
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Additional Information -->
-            <div class="form-section">
-              <h3 class="section-title">4. Additional Information</h3>
               <div class="form-row">
                 <div class="form-group">
-                  <label class="form-label">Reason for Visit</label>
-                  <textarea
-                    class="form-control"
-                    placeholder="Please describe any specific concerns or symptoms..."
-                  ></textarea>
+                  <label class="form-label">Doctor</label>
+                  <select class="form-control" id="doctor_id" required>
+                    <option value="">Select Doctor</option>
+                    <!-- These will be populated dynamically -->
+                    <option value="1">Dr. Sarah Johnson</option>
+                    <option value="2">Dr. Michael Chen</option>
+                    <option value="3">Dr. Emily Patel</option>
+                  </select>
                 </div>
               </div>
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="newPatient"
-                />
-                <label class="form-check-label" for="newPatient"
-                  >I am a new patient</label
-                >
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Appointment Date</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="appointment_date"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Appointment Time</label>
+                  <input
+                    type="time"
+                    class="form-control"
+                    id="appointment_time"
+                    required
+                  />
+                </div>
               </div>
-              <div class="form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="insuranceInfo"
-                />
-                <label class="form-check-label" for="insuranceInfo"
-                  >I will bring my insurance information</label
-                >
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Patient Description</label>
+                  <textarea
+                    class="form-control"
+                    id="patient_description"
+                    placeholder="Describe your symptoms or reason for the appointment"
+                  ></textarea>
+                </div>
               </div>
             </div>
 
@@ -674,62 +557,24 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Service cards selection
-        const serviceCards = document.querySelectorAll(".service-card");
-        serviceCards.forEach((card) => {
-          card.addEventListener("click", function () {
-            // Remove selected class from all cards
-            serviceCards.forEach((c) => c.classList.remove("selected"));
-            // Add selected class to clicked card
-            this.classList.add("selected");
-          });
-        });
-
-        // Doctor cards selection
-        const doctorCards = document.querySelectorAll(".doctor-card");
-        doctorCards.forEach((card) => {
-          card.addEventListener("click", function () {
-            // Remove selected class from all cards
-            doctorCards.forEach((c) => c.classList.remove("selected"));
-            // Add selected class to clicked card
-            this.classList.add("selected");
-          });
-        });
-
-        // Time slots selection
-        const timeSlots = document.querySelectorAll(
-          ".time-slot:not(.unavailable)"
-        );
-        timeSlots.forEach((slot) => {
-          slot.addEventListener("click", function () {
-            // Remove selected class from all slots
-            timeSlots.forEach((s) => s.classList.remove("selected"));
-            // Add selected class to clicked slot
-            this.classList.add("selected");
-          });
-        });
-
         // Form submission
         const appointmentForm = document.getElementById("appointmentForm");
         appointmentForm.addEventListener("submit", function (e) {
           e.preventDefault();
 
-          // Get selected service
-          const selectedService = document.querySelector(
-            ".service-card.selected"
-          );
-
-          // Get selected doctor
-          const selectedDoctor = document.querySelector(
-            ".doctor-card.selected"
-          );
-
-          // Get selected time slot
-          const selectedTime = document.querySelector(".time-slot.selected");
+          // Get form values
+          const doctorId = document.getElementById("doctor_id").value;
+          const appointmentDate =
+            document.getElementById("appointment_date").value;
+          const appointmentTime =
+            document.getElementById("appointment_time").value;
+          const patientDescription = document.getElementById(
+            "patient_description"
+          ).value;
 
           // Validate selections
-          if (!selectedService || !selectedDoctor || !selectedTime) {
-            alert("Please complete all required selections");
+          if (!doctorId || !appointmentDate || !appointmentTime) {
+            alert("Please complete all required fields");
             return;
           }
 
