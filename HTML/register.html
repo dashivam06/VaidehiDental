@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Vaidehi Dental</title>
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #f5f6fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px 0;
+      }
+
+      .register-container {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+        padding: 30px;
+      }
+
+      .register-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .register-header h2 {
+        color: #1a365d;
+        margin-bottom: 10px;
+      }
+
+      .register-header p {
+        color: #718096;
+        font-size: 14px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 15px;
+      }
+
+      .form-row .form-group {
+        flex: 1;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #4a5568;
+        font-weight: 500;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #e2e8f0;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: border-color 0.3s;
+      }
+
+      .form-input:focus {
+        outline: none;
+        border-color: #4299e1;
+      }
+
+      .input-with-icon {
+        position: relative;
+      }
+
+      .input-with-icon i {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 15px;
+        color: #a0aec0;
+        cursor: pointer;
+      }
+
+      .register-button {
+        width: 100%;
+        background-color: #4299e1;
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 5px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .register-button:hover {
+        background-color: #3182ce;
+      }
+
+      .terms-checkbox {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+
+      .terms-checkbox input {
+        margin-top: 3px;
+        margin-right: 10px;
+      }
+
+      .terms-checkbox label {
+        font-size: 14px;
+        color: #718096;
+      }
+
+      .terms-checkbox a {
+        color: #4299e1;
+        text-decoration: none;
+      }
+
+      .terms-checkbox a:hover {
+        text-decoration: underline;
+      }
+
+      .login-link {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+        color: #718096;
+      }
+
+      .login-link a {
+        color: #4299e1;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .login-link a:hover {
+        text-decoration: underline;
+      }
+
+      .back-to-home {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        color: #718096;
+        font-size: 14px;
+      }
+
+      .back-to-home:hover {
+        color: #4299e1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="register-container">
+      <div class="register-header">
+        <h2>Vaidehi Dental</h2>
+        <p>Create your patient account</p>
+      </div>
+
+      <form id="registerForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              id="firstName"
+              class="form-input"
+              placeholder="First Name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              id="lastName"
+              class="form-input"
+              placeholder="Last Name"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            class="form-input"
+            placeholder="your@email.com"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            class="form-input"
+            placeholder="Your phone number"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="dateOfBirth">Date of Birth</label>
+          <input type="date" id="dateOfBirth" class="form-input" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-with-icon">
+            <input
+              type="password"
+              id="password"
+              class="form-input"
+              placeholder="Create a password"
+              required
+            />
+            <i class="fas fa-eye-slash toggle-password"></i>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <div class="input-with-icon">
+            <input
+              type="password"
+              id="confirmPassword"
+              class="form-input"
+              placeholder="Confirm your password"
+              required
+            />
+            <i class="fas fa-eye-slash toggle-confirm-password"></i>
+          </div>
+        </div>
+
+        <div class="terms-checkbox">
+          <input type="checkbox" id="termsCheck" required />
+          <label for="termsCheck">
+            I agree to the <a href="#">Terms of Service</a> and
+            <a href="#">Privacy Policy</a>
+          </label>
+        </div>
+
+        <button type="submit" class="register-button">Create Account</button>
+
+        <div class="login-link">
+          <p>
+            Already have an account?
+            <a href="user-login.html">Sign in</a>
+          </p>
+        </div>
+
+        <a href="landing/index.html" class="back-to-home">
+          <i class="fas fa-arrow-left"></i> Back to Homepage
+        </a>
+      </form>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Toggle password visibility for password field
+        const togglePassword = document.querySelector(".toggle-password");
+        const passwordInput = document.getElementById("password");
+
+        togglePassword.addEventListener("click", function () {
+          const type =
+            passwordInput.getAttribute("type") === "password"
+              ? "text"
+              : "password";
+          passwordInput.setAttribute("type", type);
+          this.classList.toggle("fa-eye");
+          this.classList.toggle("fa-eye-slash");
+        });
+
+        // Toggle password visibility for confirm password field
+        const toggleConfirmPassword = document.querySelector(
+          ".toggle-confirm-password"
+        );
+        const confirmPasswordInput = document.getElementById("confirmPassword");
+
+        toggleConfirmPassword.addEventListener("click", function () {
+          const type =
+            confirmPasswordInput.getAttribute("type") === "password"
+              ? "text"
+              : "password";
+          confirmPasswordInput.setAttribute("type", type);
+          this.classList.toggle("fa-eye");
+          this.classList.toggle("fa-eye-slash");
+        });
+
+        // Form submission
+        const registerForm = document.getElementById("registerForm");
+        registerForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const firstName = document.getElementById("firstName").value;
+          const lastName = document.getElementById("lastName").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const dob = document.getElementById("dateOfBirth").value;
+          const password = document.getElementById("password").value;
+          const confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+          // Basic validation
+          if (password !== confirmPassword) {
+            alert("Passwords do not match!");
+            return;
+          }
+
+          // This is where you would normally submit to a backend
+          console.log("Registration attempt with:", {
+            firstName,
+            lastName,
+            email,
+            phone,
+            dob,
+          });
+
+          // For demo, redirect to user portal (or login)
+          window.location.href = "user-login.html";
+        });
+      });
+    </script>
+  </body>
+</html>

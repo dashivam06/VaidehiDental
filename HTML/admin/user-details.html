@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Details - Dental Clinic Admin</title>
-    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../../styles/global.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -412,92 +412,23 @@
 
   <body>
     <div class="dashboard-container">
-      <!-- Sidebar Navigation (static) -->
-      <aside class="sidebar">
-        <div class="sidebar-header">
-          <a href="dashboard.html">Vaidehi <span>Dental</span></a>
-        </div>
-        <nav class="sidebar-nav">
-          <ul>
-            <li class="nav-dashboard">
-              <a href="dashboard.html"
-                ><i class="fas fa-chart-line"></i> Dashboard</a
-              >
-            </li>
-            <li class="nav-users active">
-              <a href="users.html"><i class="fas fa-users"></i> Users</a>
-            </li>
-            <li class="nav-doctors">
-              <a href="doctors.html"><i class="fas fa-user-md"></i> Doctors</a>
-            </li>
-            <li class="nav-appointments">
-              <a href="appointments.html"
-                ><i class="far fa-calendar-alt"></i> Appointments</a
-              >
-            </li>
-            <li class="nav-blogs">
-              <a href="blogs.html"><i class="fas fa-blog"></i> Blogs</a>
-            </li>
-            <li class="nav-faqs">
-              <a href="faqs.html"
-                ><i class="fas fa-question-circle"></i> FAQs</a
-              >
-            </li>
-            <li class="nav-testimonials">
-              <a href="testimonials.html"
-                ><i class="fas fa-comment"></i> Testimonials</a
-              >
-            </li>
-            <li class="nav-videos">
-              <a href="videos.html"><i class="fas fa-video"></i> Videos</a>
-            </li>
-            <li class="nav-services">
-              <a href="services.html"
-                ><i class="fas fa-briefcase-medical"></i> Services</a
-              >
-            </li>
-            <li class="nav-settings">
-              <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="sidebar-footer">
-          <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
-        </div>
-      </aside>
+      <!-- Sidebar Navigation (loaded via JS) -->
+      <div data-component="sidebar"></div>
 
       <!-- Main Content Area -->
       <main class="main-content">
-        <!-- Top Navigation Bar (static) -->
-        <header class="top-nav">
-          <div class="search-container">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search..." />
-          </div>
-          <div class="user-info-nav">
-            <div class="notifications">
-              <i class="fas fa-bell"></i>
-              <span class="notification-badge">3</span>
-            </div>
-            <div class="user-profile-nav">
-              <img
-                src="https://xsgames.co/randomusers/assets/avatars/female/25.jpg"
-                alt="Admin"
-              />
-              <span class="username">Admin User</span>
-            </div>
-          </div>
-        </header>
+        <!-- Top Navigation Bar (loaded via JS) -->
+        <div data-component="navbar"></div>
 
         <!-- User Details Content -->
         <div class="dashboard-content">
           <section class="content-section">
-            <a href="users.html" class="back-button">
+            <a href="../admin/users.html" class="back-button">
               <i class="fas fa-arrow-left"></i> Back to Users
             </a>
 
             <div class="action-buttons">
-              <a href="edit-user.html" class="action-button edit-btn">
+              <a href="../admin/edit-user.html" class="action-button edit-btn">
                 <i class="fas fa-edit"></i> Edit User
               </a>
               <a href="#" class="action-button delete-btn">
@@ -596,5 +527,7 @@
         </div>
       </main>
     </div>
+    <!-- Include components loader script -->
+    <script src="../../js/components.js"></script>
   </body>
 </html>
