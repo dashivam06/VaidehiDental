@@ -352,14 +352,6 @@
         </div>
 
         <div class="appointments-container">
-          <div class="tab-navigation">
-            <button class="tab-button active" data-tab="upcoming">
-              Upcoming
-            </button>
-            <button class="tab-button" data-tab="past">Past</button>
-            <button class="tab-button" data-tab="cancelled">Cancelled</button>
-          </div>
-
           <!-- Upcoming Appointments Tab -->
           <div class="tab-content active" id="upcoming-tab">
             <table class="appointments-table">
@@ -367,7 +359,7 @@
                 <tr>
                   <th>Date & Time</th>
                   <th>Doctor</th>
-                  <th>Service</th>
+
                   <th>Status</th>
                   <th>Actions</th>
                 </tr>
@@ -376,7 +368,7 @@
                 <tr>
                   <td>May 15, 2023 - 10:30 AM</td>
                   <td>Dr. Sarah Johnson</td>
-                  <td>Regular Checkup</td>
+
                   <td>
                     <span class="status-badge status-confirmed">Confirmed</span>
                   </td>
@@ -391,7 +383,7 @@
                 <tr>
                   <td>June 5, 2023 - 2:00 PM</td>
                   <td>Dr. Michael Chen</td>
-                  <td>Teeth Whitening</td>
+
                   <td>
                     <span class="status-badge status-pending">Pending</span>
                   </td>
@@ -406,7 +398,7 @@
                 <tr>
                   <td>June 15, 2023 - 11:15 AM</td>
                   <td>Dr. Emily Wilson</td>
-                  <td>Dental Filling</td>
+
                   <td>
                     <span class="status-badge status-confirmed">Confirmed</span>
                   </td>
@@ -414,100 +406,6 @@
                     <div class="appointment-actions">
                       <button class="appointment-action cancel">
                         <i class="fas fa-times-circle"></i> Cancel
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Past Appointments Tab -->
-          <div class="tab-content" id="past-tab">
-            <table class="appointments-table">
-              <thead>
-                <tr>
-                  <th>Date & Time</th>
-                  <th>Doctor</th>
-                  <th>Service</th>
-                  <th>Status</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>April 10, 2023 - 9:00 AM</td>
-                  <td>Dr. Sarah Johnson</td>
-                  <td>Regular Checkup</td>
-                  <td>
-                    <span class="status-badge status-completed">Completed</span>
-                  </td>
-                  <td>
-                    <div class="appointment-actions">
-                      <button class="appointment-action view">
-                        <i class="fas fa-eye"></i> View Details
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>March 22, 2023 - 3:30 PM</td>
-                  <td>Dr. James Rodriguez</td>
-                  <td>Root Canal</td>
-                  <td>
-                    <span class="status-badge status-completed">Completed</span>
-                  </td>
-                  <td>
-                    <div class="appointment-actions">
-                      <button class="appointment-action view">
-                        <i class="fas fa-eye"></i> View Details
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>February 5, 2023 - 1:45 PM</td>
-                  <td>Dr. Emily Wilson</td>
-                  <td>Teeth Cleaning</td>
-                  <td>
-                    <span class="status-badge status-completed">Completed</span>
-                  </td>
-                  <td>
-                    <div class="appointment-actions">
-                      <button class="appointment-action view">
-                        <i class="fas fa-eye"></i> View Details
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Cancelled Appointments Tab -->
-          <div class="tab-content" id="cancelled-tab">
-            <table class="appointments-table">
-              <thead>
-                <tr>
-                  <th>Date & Time</th>
-                  <th>Doctor</th>
-                  <th>Service</th>
-                  <th>Status</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>April 25, 2023 - 4:00 PM</td>
-                  <td>Dr. Michael Chen</td>
-                  <td>Dental X-Ray</td>
-                  <td>
-                    <span class="status-badge status-cancelled">Cancelled</span>
-                  </td>
-                  <td>
-                    <div class="appointment-actions">
-                      <button class="appointment-action view">
-                        <i class="fas fa-eye"></i> View Details
                       </button>
                     </div>
                   </td>
